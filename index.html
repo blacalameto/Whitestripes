@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHITESTRIPES.NET — The Little Room Discord</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Ultra&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ws-red: #E11B22;
+            --ws-black: #0A0A0A;
+            --ws-white: #F7F7F7;
+        }
+
+        body {
+            background-color: var(--ws-black);
+            color: var(--ws-white);
+            font-family: 'Space Mono', monospace;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .font-ultra {
+            font-family: 'Ultra', serif;
+        }
+
+        /* Halftone Dot Pattern Background */
+        .bg-dots {
+            background-image: radial-gradient(rgba(225, 27, 34, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* CRT Scanline Effect */
+        .scanlines {
+            background: linear-gradient(
+                rgba(18, 16, 16, 0) 50%, 
+                rgba(0, 0, 0, 0.35) 50%
+            );
+            background-size: 100% 4px;
+        }
+
+        /* Spinning Vinyl Animation */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .spin-vinyl {
+            animation: spin 3.5s linear infinite;
+        }
+
+        .paused {
+            animation-play-state: paused;
+        }
+
+        /* Retro Button Hover Shadow */
+        .btn-retro {
+            box-shadow: 4px 4px 0px 0px var(--ws-red);
+            transition: all 0.15s ease-in-out;
+        }
+
+        .btn-retro:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px var(--ws-red);
+        }
+
+        .btn-retro:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px var(--ws-red);
+        }
+
+        /* Peppermint Pattern */
+        .peppermint-swirl {
+            background: repeating-conic-gradient(
+                from 0deg,
+                #E11B22 0deg 30deg,
+                #F7F7F7 30deg 60deg
+            );
+        }
+    </style>
+</head>
+<body class="bg-dots relative flex flex-col justify-between select-none">
+
+    <!-- Scanline Overlay -->
+    <div class="pointer-events-none absolute inset-0 scanlines z-20 opacity-60"></div>
+
+    <!-- Header / Nav -->
+    <header class="relative z-30 shrink-0 w-full px-6 py-4 flex justify-between items-center border-b-2 border-[#E11B22]/30 bg-[#0A0A0A]/90 backdrop-blur-sm">
+        <div class="flex items-center space-x-3">
+            <div class="w-8 h-8 rounded-full peppermint-swirl border-2 border-white shadow-md animate-spin" style="animation-duration: 8s;"></div>
+            <span class="font-ultra text-xl tracking-wider text-white uppercase">WHITESTRIPES<span class="text-[#E11B22]">.NET</span></span>
+        </div>
+        <a href="https://discord.gg/JBbKtxKn5k" target="_blank" rel="noopener noreferrer" aria-label="Join Discord Server" class="btn-retro bg-[#E11B22] text-white font-bold text-xs uppercase px-4 py-2 border-2 border-white flex items-center space-x-2">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028z"/>
+            </svg>
+            <span>Join Discord</span>
+        </a>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="relative z-30 flex-1 flex flex-col items-center justify-center text-center px-4">
+        <div class="max-w-3xl flex flex-col items-center space-y-4 sm:space-y-6">
+            
+            <!-- Badge -->
+            <div class="inline-flex items-center space-x-2 bg-[#E11B22]/10 border border-[#E11B22] px-3 py-1 rounded-full text-xs text-[#E11B22] tracking-widest font-bold uppercase">
+                <span class="w-2 h-2 rounded-full bg-[#E11B22] animate-ping"></span>
+                <span>Signal Re-Established</span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="font-ultra text-4xl sm:text-6xl md:text-7xl tracking-wide uppercase text-white leading-none drop-shadow-[0_4px_0_#E11B22]">
+                WHITESTRIPES<span class="text-[#E11B22]">.NET</span>
+            </h1>
+
+            <!-- Message -->
+            <p class="text-sm sm:text-base text-gray-300 max-w-xl font-mono leading-relaxed px-2">
+                The Little Room lives on. Join us on Discord.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
+                <a href="https://discord.gg/JBbKtxKn5k" target="_blank" rel="noopener noreferrer" aria-label="Enter The Little Room Discord" class="btn-retro bg-[#E11B22] text-white font-ultra text-sm uppercase px-6 py-3 border-2 border-white flex items-center space-x-3 group">
+                    <svg class="w-5 h-5 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028z"/>
+                    </svg>
+                    <span>Enter The Little Room</span>
+                </a>
+                
+                <button id="toggleVinyl" type="button" aria-label="Toggle Turntable Animation" class="btn-retro bg-black text-gray-300 hover:text-white font-mono text-xs uppercase px-4 py-3 border-2 border-gray-600 hover:border-white flex items-center space-x-2">
+                    <span id="vinylStatusDot" class="w-2 h-2 rounded-full bg-green-500"></span>
+                    <span id="vinylBtnText">Pause Turntable</span>
+                </button>
+            </div>
+
+            <!-- Turntable Visual -->
+            <div class="pt-2">
+                <div class="relative w-52 h-52 sm:w-64 sm:h-64 bg-[#E11B22] p-3 border-2 border-white shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-300 flex items-center justify-center">
+                    <div id="vinylRecord" class="w-full h-full rounded-full bg-black border-4 border-gray-900 flex items-center justify-center spin-vinyl shadow-inner relative overflow-hidden">
+                        <!-- Grooves -->
+                        <div class="absolute inset-2 rounded-full border border-gray-800/60"></div>
+                        <div class="absolute inset-5 rounded-full border border-gray-800/80"></div>
+                        <div class="absolute inset-8 rounded-full border border-gray-800/60"></div>
+                        <div class="absolute inset-12 rounded-full border border-gray-800/80"></div>
+                        <div class="absolute inset-16 rounded-full border border-gray-800/60"></div>
+                        
+                        <!-- Peppermint Label -->
+                        <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-full peppermint-swirl border-2 border-white flex items-center justify-center shadow-lg relative z-10">
+                            <div class="w-3 h-3 rounded-full bg-black border border-white"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="relative z-30 shrink-0 w-full py-3 text-center border-t border-[#E11B22]/20 bg-[#0A0A0A]/90 text-[10px] text-gray-500 tracking-widest uppercase">
+        &copy; WHITESTRIPES.NET — The Little Room Community
+    </footer>
+
+    <script>
+        const vinyl = document.getElementById('vinylRecord');
+        const toggleBtn = document.getElementById('toggleVinyl');
+        const btnText = document.getElementById('vinylBtnText');
+        const statusDot = document.getElementById('vinylStatusDot');
+        
+        let isPlaying = true;
+
+        toggleBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                vinyl.classList.remove('paused');
+                btnText.textContent = 'Pause Turntable';
+                statusDot.classList.replace('bg-red-500', 'bg-green-500');
+            } else {
+                vinyl.classList.add('paused');
+                btnText.textContent = 'Play Turntable';
+                statusDot.classList.replace('bg-green-500', 'bg-red-500');
+            }
+        });
+    </script>
+</body>
+</html>
